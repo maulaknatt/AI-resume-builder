@@ -595,10 +595,11 @@
 .mobile-tab-switch {
   display: none;
   background: var(--bg-card);
-  border: 1px solid var(--glass-border);
+  border: var(--brutal-border-width) solid var(--border-color);
   padding: 6px;
   border-radius: var(--border-radius-md);
   margin-bottom: 12px;
+  box-shadow: 4px 4px 0px var(--border-color);
 }
 
 @media (max-width: 1024px) {
@@ -934,6 +935,81 @@
 
 .footer-github-link:hover .footer-github-icon {
   transform: rotate(10deg) scale(1.1);
+}
+
+/* 
+ * Playful Neobrutalist Mobile Responsiveness Updates 
+ */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .section-selector {
+    width: 100%;
+  }
+
+  .btn-icon {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .panel {
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .wizard-footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .wizard-footer button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .app-footer {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 24px 12px;
+  }
+
+  .footer-left {
+    justify-content: center;
+  }
+
+  .footer-right {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer-github-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .step-indicator {
+    gap: 4px;
+  }
+
+  .step-dot {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
 }
 
 /* 
