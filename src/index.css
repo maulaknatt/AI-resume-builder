@@ -1,0 +1,187 @@
+/* 
+ * Global Design System & Variables
+ * Premium Dark & Light Themes
+ */
+
+:root {
+  /* Color Palette - Playful Neobrutalist Pastel Accent */
+  --primary-color: #ffd60a; /* Bold Bright Yellow */
+  --primary-hover: #ffc300;
+  --secondary-color: #c77dff; /* Playful Purple */
+  --secondary-hover: #b5179e;
+  --accent-color: #4ade80; /* Bold Green */
+  
+  /* Playful pastel palettes */
+  --pastel-yellow: #fef08a;
+  --pastel-green: #bbf7d0;
+  --pastel-purple: #e9d5ff;
+  --pastel-blue: #bfdbfe;
+  --pastel-orange: #fed7aa;
+  --pastel-pink: #fbcfe8;
+
+  /* Fonts */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-serif: 'Lora', serif;
+  
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-lora: 'Lora', serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-robotomono: 'Roboto Mono', monospace;
+  --font-merriweather: 'Merriweather', serif;
+  --font-plusjakartasans: 'Plus Jakarta Sans', sans-serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-dmsans: 'DM Sans', sans-serif;
+
+  /* Neobrutalism Layout Tokens */
+  --transition-smooth: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius-lg: 16px;
+  --border-radius-md: 12px;
+  --border-radius-sm: 6px;
+  
+  /* Key Neobrutalism Outlines & Shadows */
+  --brutal-border-width: 3px;
+  --box-shadow: 6px 6px 0px #000000;
+  --box-shadow-hover: 10px 10px 0px #000000;
+  --box-shadow-active: 1px 1px 0px #000000;
+}
+
+/* Light Theme default - Playful & Warm Sand Cream */
+:root {
+  --bg-app: #fbf9f3;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #27272a;
+  --text-muted: #71717a;
+  --border-color: #000000;
+  --border-focus: #000000;
+  --bg-gradient: none;
+  --glass-border: #000000;
+  --glass-shadow: 6px 6px 0px #000000;
+}
+
+/* Dark Theme values - Retro Arcade Dark Theme */
+[data-theme="dark"] {
+  --bg-app: #121214;
+  --bg-card: #1c1c21;
+  --bg-input: #121214;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #8a8a93;
+  --border-color: #ffffff;
+  --border-focus: #ffffff;
+  --bg-gradient: none;
+  --glass-border: #ffffff;
+  --glass-shadow: 6px 6px 0px #ffffff;
+}
+
+/* Ensure CV and Cover Letter elements keep their dark text colors in Dark Mode */
+[data-theme="dark"] .cv-paper,
+[data-theme="dark"] .cl-paper,
+[data-theme="dark"] .cl-paper *,
+[data-theme="dark"] [contenteditable] {
+  color: #000000 !important;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-app);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: var(--transition-smooth);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Form elements styling */
+input, textarea, select {
+  font-family: var(--font-body);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border: var(--brutal-border-width) solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 12px 16px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  width: 100%;
+  box-shadow: 3px 3px 0px var(--border-color);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--border-focus);
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px var(--border-color);
+}
+
+button {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  border: var(--brutal-border-width) solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-weight: 700;
+  transition: var(--transition-smooth);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Utility Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.animate-slide {
+  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

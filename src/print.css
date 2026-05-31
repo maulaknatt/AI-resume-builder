@@ -1,0 +1,92 @@
+/* 
+ * print.css
+ * Precision styling for A4 high-quality PDF print exports.
+ */
+
+@media print {
+  /* Setup page margins and size */
+  @page {
+    size: A4;
+    margin: 15mm 12mm 15mm 12mm;
+  }
+
+  /* Reset body background, fonts, and colors for standard print */
+  body {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    -webkit-print-color-adjust: exact !important; /* Keep template color accents */
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide ALL screen-only UI elements */
+  .no-print,
+  nav,
+  header,
+  footer,
+  button,
+  .app-sidebar,
+  .form-wizard,
+  .ai-settings-card,
+  .tab-switcher,
+  .template-selector,
+  .customization-panel,
+  .toast-notification,
+  .cover-letter-section {
+    display: none !important;
+  }
+
+  /* Make the CV preview container occupy 100% width and remove any layout wrapper styles */
+  .app-container,
+  .workspace-layout,
+  .workspace-layout > div {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .cv-preview-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  .cv-paper {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 15mm 12mm !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  /* Prevent page-break issues inside list items and paragraphs */
+  .experience-item, 
+  .education-item,
+  .skills-section,
+  .project-item {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Links styling in print */
+  a {
+    text-decoration: none !important;
+    color: #111111 !important;
+  }
+
+  /* Ensure text is dark and highly readable */
+  p, span, li, td, h1, h2, h3, h4, h5, h6 {
+    color: #111111 !important;
+  }
+}
